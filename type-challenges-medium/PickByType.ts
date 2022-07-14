@@ -10,6 +10,8 @@ type OnlyBoolean = PickByType<
   boolean
 >; // { isReadonly: boolean; isEnable: boolean; }
 
-// TO BE COTINUE
+type PickByType<P, Q> = {
+  [K in keyof P as P[K] extends Q ? K : never]: P[K];
+};
 
 export {};
